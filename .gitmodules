@@ -1,0 +1,3 @@
+[submodule ".config"]
+	path = .config
+	url = git@github.com:jiahaoxiang2000/arch-config.git

@@ -9,7 +9,10 @@
 .dotnet/**
 .claude/**
 .config/**
+.npm/**
+.npm-global/*
 
+.claude*
 .bash_history
 .python_history
 .viminfo

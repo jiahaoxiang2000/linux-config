@@ -1,0 +1,15 @@
+.cache/**
+.local/**
+.mozilla/**
+.ssh/**
+.vscode/**
+.pki/**
+.nix-defexpr/**
+.gnupg/**
+.dotnet/**
+.claude/**
+.config/**
+
+.bash_history
+.python_history
+.viminfo

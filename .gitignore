@@ -12,6 +12,7 @@
 .npm/**
 .npm-global/*
 
+.nix-profile
 .claude*
 .bash_history
 .python_history

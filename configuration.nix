@@ -45,6 +45,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -64,17 +65,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with 'passwd'.
    users.users.isomo = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-       tree
-       neovim
-       python3
-       vscode
-       nodejs
-     ];
+     extraGroups = [ "wheel" ]; # Enable 'sudo' for the user.
    };
 
   programs.firefox.enable = true;

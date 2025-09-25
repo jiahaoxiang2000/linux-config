@@ -35,6 +35,10 @@
     
     # misc
     netease-cloud-music-gtk
+    
+    # video
+    obs-studio
+    kdePackages.kdenlive
 
     # desktop for hyprland
     foot
@@ -42,6 +46,7 @@
     xremap
     wl-clipboard
     waybar
+    pavucontrol
 
     # writing 
     ## source han is for chinese

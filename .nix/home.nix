@@ -19,6 +19,8 @@
   };
 
   home.stateVersion = "25.05";
+
+
   home.packages = with pkgs; [
     # IDE
     neovim
@@ -30,9 +32,11 @@
     rustc
     rustup
     gcc
+    uv
     
     # dependence lib
-    
+    gnumake
+
     # misc
     netease-cloud-music-gtk
     

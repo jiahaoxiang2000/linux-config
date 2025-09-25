@@ -180,9 +180,19 @@
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      git
+     # Audio and development libraries
+     alsa-lib
+     openssl
    ];
 
   nixpkgs.config.allowUnfree = true;
+
+  # System-wide environment variables
+  environment.variables = {
+    PKG_CONFIG_PATH = "${pkgs.alsa-lib.dev}/lib/pkgconfig:${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.pkg-config}/lib/pkgconfig";
+    ALSA_PCM_CARD = "default";
+    ALSA_PCM_DEVICE = "0";
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

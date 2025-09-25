@@ -18,12 +18,12 @@
         specialArgs = { inherit inputs; }; # this is the important part
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./.nix/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.isomo = import ./home.nix;
+            home-manager.users.isomo = import ./.nix/home.nix;
           }
         ];
       };

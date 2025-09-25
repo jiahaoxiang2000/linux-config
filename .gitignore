@@ -13,6 +13,7 @@
 .npm-global/*
 .cargo/*
 .rustup/*
+.lyrics/*
 
 .nix-profile
 .claude*

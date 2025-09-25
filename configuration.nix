@@ -60,6 +60,23 @@
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable bluetooth support.
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        ControllerMode = "dual";
+      };
+    };
+  };
+  services.blueman.enable = true;
+
+  # Disable specific Bluetooth controller via udev
+  services.udev.extraRules = ''
+    # Disable USB Bluetooth controller with 60:FF:9E:DB:C8:C2 (Vendor: 13d3, Product: 3558)
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="13d3", ATTRS{idProduct}=="3558", RUN+="/bin/sh -c 'echo 1 > /sys$devpath/remove'"
+  '';
+  
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";

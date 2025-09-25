@@ -12,5 +12,11 @@
     foot
     wofi
     xremap
+    wl-clipboard
+    # fonts
+    ## source han is for chinese
+    source-han-serif
+    source-han-sans
+    source-han-mono
   ];
 }

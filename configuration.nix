@@ -47,10 +47,30 @@
 
   programs.hyprland = {
     enable = true;
+    xwayland.enable = true;
     # set the flake package
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
+  
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    # Use the open source version of the kernel module (for driver 515.43.04+)
+    # Only available on driver 515.43.04+
+    open = false;  # Set to true if you want open-source drivers
+    
+    # Enable NVIDIA settings menu
+    nvidiaSettings = true;
+    
+    # Select the appropriate driver version
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # Or use: config.boot.kernelPackages.nvidiaPackages.beta
+    # Or use: config.boot.kernelPackages.nvidiaPackages.latest
+    
+    # Modesetting is required for Wayland
+    modesetting.enable = true;
+    
   };
 
   # nix.settings = {

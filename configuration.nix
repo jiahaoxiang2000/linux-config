@@ -75,6 +75,7 @@
   services.udev.extraRules = ''
     # Disable USB Bluetooth controller with 60:FF:9E:DB:C8:C2 (Vendor: 13d3, Product: 3558)
     SUBSYSTEM=="usb", ATTRS{idVendor}=="13d3", ATTRS{idProduct}=="3558", RUN+="/bin/sh -c 'echo 1 > /sys$devpath/remove'"
+    KERNEL=="uinput", GROUP="input", TAG+="uaccess"
   '';
   
   # Configure keymap in X11
@@ -93,12 +94,14 @@
   # };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
+  services.libinput.enable = true;
+  hardware.uinput.enable = true;
+  boot.kernelModules = [ "uinput" ];
 
   # Define a user account. Don't forget to set a password with 'passwd'.
    users.users.isomo = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable 'sudo' for the user.
+     extraGroups = [ "wheel" "input" ]; # Enable 'sudo' for the user.
    };
 
   programs.firefox.enable = true;

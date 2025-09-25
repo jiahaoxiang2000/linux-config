@@ -11,6 +11,8 @@
 .config/**
 .npm/**
 .npm-global/*
+.cargo/*
+.rustup/*
 
 .nix-profile
 .claude*

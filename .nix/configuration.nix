@@ -11,7 +11,7 @@
     ];
   
   # use the china mirrors
-  nix.settings.substituters = lib.mkForce [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+  nix.settings.substituters = lib.mkForce [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nios-unstable" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -88,16 +88,25 @@
   # X11 not needed with Hyprland (Wayland)
   # services.xserver.enable = true;
 
-
   # Enable SDDM display manager
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
   programs.river = {
     enable = true;
-    xwayland.enable = true;
+    # xwayland.enable = true;
   };
-  
+
+  # Ensure DISPLAY and WAYLAND_DISPLAY are available to user services
+  environment.sessionVariables = {
+    # Make sure River session exports these properly
+    NIXOS_OZONE_WL = "1";
+  };
+
+  services.dbus.enable = true;
+  programs.dconf.enable = true;
+
+  # Enable NVIDIA support 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     # Use the open source version of the kernel module (for driver 515.43.04+)
@@ -111,9 +120,6 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     # Or use: config.boot.kernelPackages.nvidiaPackages.beta
     # Or use: config.boot.kernelPackages.nvidiaPackages.latest
-    
-    # Modesetting is required for Wayland
-    modesetting.enable = true;
     
   };
 
@@ -157,7 +163,7 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    # extraPortals = [ pkgs.xdg-desktop-portal-wlr];
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -233,7 +239,8 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.05"; # Did you read the comment?
+  # system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 
 }
 

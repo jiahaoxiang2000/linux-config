@@ -15,6 +15,7 @@
 !.cargo/config.toml
 .rustup/*
 .lyrics/*
+.debug/*
 
 # Standard directories
 Desktop/**

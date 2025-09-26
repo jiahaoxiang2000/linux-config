@@ -17,6 +17,13 @@
       package = pkgs.adwaita-icon-theme;
     };
   };
+  
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+    ];
+  };
 
   home.stateVersion = "25.05";
 
@@ -51,7 +58,6 @@
     killall
     
     # video
-    obs-studio
     kdePackages.kdenlive
 
     # desktop for hyprland

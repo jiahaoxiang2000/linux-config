@@ -64,7 +64,6 @@
     wmenu
     xremap
     wl-clipboard
-    waybar
     pavucontrol
     wlr-randr
     i3bar-river

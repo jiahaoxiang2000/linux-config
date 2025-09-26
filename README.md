@@ -6,7 +6,7 @@ This repository contains my personal NixOS system configuration, managing both s
 
 This configuration provides a complete desktop environment setup with:
 
-- **Hyprland** (Wayland compositor)
+- **River** (Wayland compositor)
 - **NVIDIA** driver support with Wayland compatibility
 - **Chinese input method** (Fcitx5 with Pinyin)
 - **Development environment** (Python, Node.js, Rust, C++)
@@ -32,10 +32,10 @@ This configuration provides a complete desktop environment setup with:
 
 ### Desktop Environment
 
-- **Hyprland** - Modern Wayland compositor
+- **River** - Tiling Wayland compositor
 - **SDDM** - Display manager with Wayland support
-- **Waybar** - Status bar for Wayland
-- **Wofi** - Application launcher
+- **i3bar-river** & **i3status-rust** - Status bar for River
+- **wmenu** - Wayland-native menu application
 - **GTK theming** - Adwaita dark theme with Papirus icons
 
 ### Input & Internationalization
@@ -77,5 +77,6 @@ sudo nixos-rebuild build --flake .#desktop
 - **NixOS Version**: 25.05
 - **Architecture**: x86_64-linux
 - **Boot Loader**: systemd-boot (UEFI)
+- **Window Manager**: River (Wayland)
 - **Display Protocol**: Wayland
 - **Time Zone**: Asia/Hong_Kong

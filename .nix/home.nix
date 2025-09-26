@@ -24,7 +24,16 @@
   home.packages = with pkgs; [
     # IDE
     neovim
-    vscode
+    (vscode.override {
+      commandLineArgs = [
+        "--enable-features=UseOzonePlatform"
+        "--ozone-platform=wayland"
+        "--enable-wayland-ime"
+        "--wayland-text-input-version=3"
+        "--disable-gpu-sandbox"
+        "--disable-gpu-compositing"
+      ];
+    })
 
     # dev environment
     python3
@@ -39,6 +48,7 @@
 
     # misc
     netease-cloud-music-gtk
+    killall
     
     # video
     obs-studio
@@ -46,11 +56,14 @@
 
     # desktop for hyprland
     foot
-    wofi
+    wmenu
     xremap
     wl-clipboard
     waybar
     pavucontrol
+    wlr-randr
+    i3bar-river
+    i3status-rust
 
     # writing 
     ## source han is for chinese

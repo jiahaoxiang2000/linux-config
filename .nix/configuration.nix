@@ -63,7 +63,7 @@
               Backend = "Baidu";
             };
           };
-          globalOptions = { "Hotkey/TriggerKeys" = { "0" = "Alt+space"; }; };
+          globalOptions = { "Hotkey/TriggerKeys" = { "0" = "Control+Shift_L"; }; };
           inputMethod = {
             "Groups/0" = {
               Name = "Default";
@@ -93,13 +93,9 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
-  programs.hyprland = {
+  programs.river = {
     enable = true;
     xwayland.enable = true;
-    # set the flake package
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
   
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -121,10 +117,6 @@
     
   };
 
-  # nix.settings = {
-  #   substituters = ["https://hyprland.cachix.org"];
-  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  # };
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

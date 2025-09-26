@@ -98,5 +98,9 @@ export NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
 # Enhanced fuzzy finder with item numbers and previews
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --info=inline --multi --preview-window=:hidden"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview' --height 60%"
-export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} 2> /dev/null || cat {}' --height 60%"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} 2> /dev/null || ls -la {}' --height 60%"
+export FZF_CTRL_T_OPTS="--preview 'tree -C {} 2> /dev/null || ls -la {}' --height 60%"
+export FZF_ALT_C_OPTS="--preview 'bat --style=numbers --color=always {} 2> /dev/null || cat {}' --height 60%"
+
+# Custom FZF commands to swap Ctrl+T (folders) and Alt+C (files)
+export FZF_CTRL_T_COMMAND="find . -type d"
+export FZF_ALT_C_COMMAND="find . -type f"

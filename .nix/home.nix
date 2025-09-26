@@ -43,6 +43,7 @@
 
     # dev environment
     python3
+    pipx
     nodejs
     rustc
     rustup
@@ -56,9 +57,11 @@
     # misc
     netease-cloud-music-gtk
     killall
+    p7zip
     
     # video
     kdePackages.kdenlive
+    mpv
 
     # desktop for hyprland
     foot

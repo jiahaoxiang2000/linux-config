@@ -175,16 +175,39 @@
    users.users.isomo = {
      isNormalUser = true;
      extraGroups = [ "wheel" "input" ]; # Enable 'sudo' for the user.
+     shell = pkgs.zsh;
    };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch";
+    };
+
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" "sudo" "docker" "kubectl" "history" "colored-man-pages" "fzf" ];
+      theme = "robbyrussell";
+    };
+
+  };
 
   programs.firefox.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-   environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      git
+     fzf # Fuzzy finder for enhanced shell search
+     bat # Better cat with syntax highlighting for fzf preview
+     tree # Directory tree view for fzf
      # Audio and development libraries
      alsa-lib
      openssl

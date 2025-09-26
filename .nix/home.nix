@@ -24,7 +24,7 @@
       wlrobs
     ];
   };
-  
+
   home.stateVersion = "25.11"; 
 
   home.packages = with pkgs; [
@@ -48,6 +48,7 @@
     rustup
     gcc
     uv
+    gh
     
     # dependence lib
     gnumake

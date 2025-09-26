@@ -33,3 +33,7 @@ Public/**
 .python_history
 .viminfo
 .gtkrc-2.0
+.histfile
+.zcompdump*
+.gitignore
+.zsh_history

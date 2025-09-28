@@ -2,44 +2,11 @@
 """Send Codex notifications through dunstify."""
 
 import json
+import re
 import subprocess
 import sys
+from collections.abc import Mapping, Sequence
 from typing import Any, Dict, Optional, Tuple
-
-
-def extract_assistant_title(notification: Dict[str, Any]) -> Tuple[str, str]:
-    """Return a title prefix and default title text extracted from the payload."""
-    assistant_message = (
-        notification.get("last-assistant-message")
-        or notification.get("final-assistant-message")
-        or notification.get("assistant_message")
-    )
-
-    if assistant_message:
-        return "Codex", str(assistant_message)
-
-    run_label = notification.get("run-label") or notification.get("id")
-    if run_label:
-        return "Codex", f"Run {run_label} complete"
-
-    return "Codex", "Run Complete"
-
-
-def gather_run_summary(notification: Dict[str, Any]) -> str:
-    """Compose a concise summary for the agent run."""
-    input_messages = notification.get("input-messages") or notification.get("input_messages")
-    if isinstance(input_messages, list):
-        parts = [str(item) for item in input_messages if item]
-        if parts:
-            return " ".join(parts)
-    elif isinstance(input_messages, str):
-        return input_messages
-
-    summary = notification.get("summary") or notification.get("run-summary")
-    if summary:
-        return str(summary)
-
-    return "Awaiting the next request."
 
 
 def parse_notification(raw: str) -> Optional[Tuple[str, str]]:
@@ -49,14 +16,28 @@ def parse_notification(raw: str) -> Optional[Tuple[str, str]]:
     except json.JSONDecodeError:
         return None
 
-    if notification.get("type") != "agent-run-complete":
-        return None
+    notification_type = notification.get("type")
+    if notification_type == "agent-turn-complete":
+        assistant_message = notification.get("last-assistant-message")
+        if assistant_message:
+            title = f"Codex: {assistant_message}"
+        else:
+            title = "Codex: Turn Complete"
 
-    app_name, detail = extract_assistant_title(notification)
-    message = gather_run_summary(notification)
+        input_messages = notification.get("input-messages") or notification.get("input_messages")
+        if isinstance(input_messages, list):
+            message = " ".join(str(item) for item in input_messages if item)
+        elif isinstance(input_messages, str):
+            message = input_messages
+        else:
+            message = ""
 
-    title = f"{app_name}: {detail}" if detail else f"{app_name}: Run Complete"
-    return title, message
+        if not message:
+            message = "Awaiting the next request."
+
+        return title, message
+
+    return None
 
 
 def main() -> int:

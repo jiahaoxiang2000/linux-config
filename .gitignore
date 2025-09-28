@@ -15,6 +15,7 @@
 .rustup/*
 .lyrics/*
 .debug/*
+.codex/**
 
 # Standard directories
 Desktop/**

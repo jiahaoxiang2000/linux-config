@@ -25,7 +25,7 @@
     ];
   };
 
-  home.stateVersion = "25.11"; 
+  home.stateVersion = "25.05"; 
 
   home.packages = with pkgs; [
     # IDE
@@ -55,23 +55,28 @@
     gnumake
 
     # misc
-    netease-cloud-music-gtk
+    netease-cloud-music-gtk # netease cloud music
+    qqmusic # qq music
     killall
-    p7zip
+    p7zip # 7z
+    kdePackages.okular # pdf reader
     
     # video
     kdePackages.kdenlive
     mpv
 
     # desktop for hyprland
-    foot
-    wmenu
-    xremap
-    wl-clipboard
-    pavucontrol
-    wlr-randr
+    foot # terminal
+    wmenu # application launcher
+    xremap # keyboard remap
+    wl-clipboard # clipboard tool
+    pavucontrol # audio setting
+    wlr-randr # display setting
     i3bar-river
-    i3status-rust
+    i3status-rust # status bar
+    hyprshot # screenshot
+    hyprlock # lock screen
+    dunst # notification
 
     # writing 
     ## source han is for chinese

@@ -54,7 +54,11 @@ export no_proxy=localhost,127.0.0.1,::1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
 
 # Custom date format function - formats date in YYYY-MM-DD HH:MM:SS TZ format (24-hour, no weekday)
 function mydate() {
-    date +"%Y-%m-%d %H:%M:%S %Z"
+    date +"%Y-%m-%d %H:%M:%S %Z %a"
+}
+
+function tododate() {
+    date +"%Y-%m-%d %a"
 }
 
 # Quick translation to Chinese function

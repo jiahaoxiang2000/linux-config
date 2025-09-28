@@ -16,6 +16,7 @@
 .lyrics/*
 .debug/*
 .codex/**
+!.codex/config.toml
 
 # Standard directories
 Desktop/**

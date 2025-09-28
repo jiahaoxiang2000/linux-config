@@ -1,0 +1,11 @@
+model = "gpt-5-codex"
+[projects."/home/isomo"]
+trust_level = "trusted"
+
+[projects."/home/isomo/Documents/writing/MATH"]
+trust_level = "trusted"
+
+[mcp_servers.all-in-mcp]
+command = "pipx"
+args = ["run", "all-in-mcp"]
+env = { APAPER = "true", GITHUB_REPO_MCP = "true" }

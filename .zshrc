@@ -78,6 +78,9 @@ function toen() {
 # Original Claude with proxy settings
 alias claude='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080 claude'
 
+# Codex routed through the same local proxy
+alias codex='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080 codex'
+
 # Claude with DeepSeek API
 alias claude-deepseek='source ~/.token && ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" claude'
 

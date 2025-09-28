@@ -17,6 +17,7 @@
 .debug/*
 .codex/**
 !.codex/config.toml
+!.codex/notify.py
 
 # Standard directories
 Desktop/**

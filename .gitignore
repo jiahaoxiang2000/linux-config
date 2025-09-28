@@ -7,7 +7,6 @@
 .nix-defexpr/**
 .gnupg/**
 .dotnet/**
-.claude/**
 .config/**
 .npm/**
 .npm-global/*
@@ -28,7 +27,7 @@ Templates/**
 Public/**
 
 .nix-profile
-.claude*
+.claude.*
 .bash_history
 .python_history
 .viminfo

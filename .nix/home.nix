@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  danmu-tts = pkgs.callPackage ./danmu-tts.nix {};
-in
-
 { 
 
   gtk = {
@@ -93,7 +89,5 @@ in
     typst
     tinymist
 
-    # TTS server
-    danmu-tts
   ];
 }

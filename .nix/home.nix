@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  danmu-tts = pkgs.callPackage ./danmu-tts.nix {};
+in
+
 { 
 
   gtk = {
@@ -88,5 +92,8 @@
     texliveFull
     typst
     tinymist
+
+    # TTS server
+    danmu-tts
   ];
 }

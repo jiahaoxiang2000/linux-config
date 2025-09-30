@@ -17,6 +17,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Use Zen kernel
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -125,6 +128,22 @@
 
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Automatic garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
+  # Optimize store automatically
+  nix.optimise = {
+    automatic = true;
+    dates = [ "weekly" ];
+  };
+
+  # Limit number of generations to keep
+  boot.loader.systemd-boot.configurationLimit = 10;
 
   # Enable bluetooth support.
   hardware.bluetooth = {

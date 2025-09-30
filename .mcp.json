@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "all-in-mcp": {
+      "type": "stdio",
+      "command": "pipx",
+      "args": ["run", "all-in-mcp"],
+      "env": {
+        "GITHUB_REPO_MCP": "true"
+      }
+    }
+  }
+}

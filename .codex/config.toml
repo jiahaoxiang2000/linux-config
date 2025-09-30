@@ -1,5 +1,6 @@
 model = "gpt-5-codex"
 notify = ["python3", "/home/isomo/.codex/notify.py"]
+
 [projects."/home/isomo"]
 trust_level = "trusted"
 
@@ -7,6 +8,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/home/isomo/Documents/writing/big_paper"]
+trust_level = "trusted"
+
+[projects."/home/isomo/Documents/writing/deeper-paper"]
 trust_level = "trusted"
 
 [mcp_servers.all-in-mcp]

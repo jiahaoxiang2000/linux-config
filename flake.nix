@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    blivedm_rs = {
+      url = "github:jiahaoxiang2000/blivedm_rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@ inputs: {
@@ -23,6 +27,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.isomo = import ./.nix/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
       };

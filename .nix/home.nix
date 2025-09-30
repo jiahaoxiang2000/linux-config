@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 { 
 
@@ -28,6 +28,8 @@
   home.stateVersion = "25.05"; 
 
   home.packages = with pkgs; [
+    inputs.blivedm_rs.packages.${pkgs.system}.default
+
     # IDE
     neovim
     (vscode.override {
@@ -60,6 +62,7 @@
     killall
     p7zip # 7z
     kdePackages.okular # pdf reader
+    fastfetch # system info
     
     # video
     kdePackages.kdenlive

@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }:
 
-{ 
+{
 
   gtk = {
     enable = true;
@@ -32,7 +32,14 @@
 
     # IDE
     neovim
-    (vscode.override {
+    ((vscode.overrideAttrs (oldAttrs: {
+      version = "1.104.2";
+      src = pkgs.fetchurl {
+        name = "VSCode_1.104.2_linux-x64.tar.gz";
+        url = "https://update.code.visualstudio.com/1.104.2/linux-x64/stable";
+        sha256 = "0zgsR0nk9zsOeEcKhrmAFbAhvKKFNsC8fXjCnxFcndE=";
+      };
+    })).override {
       commandLineArgs = [
         "--enable-features=UseOzonePlatform"
         "--ozone-platform=wayland"
@@ -63,6 +70,7 @@
     p7zip # 7z
     kdePackages.okular # pdf reader
     fastfetch # system info
+    jq # json parser
     
     # video
     kdePackages.kdenlive

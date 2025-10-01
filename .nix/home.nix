@@ -28,7 +28,9 @@
   home.stateVersion = "25.05"; 
 
   home.packages = with pkgs; [
+    # for live streaming
     inputs.blivedm_rs.packages.${pkgs.system}.default
+    inputs.danmu-tts.packages.${pkgs.system}.default
 
     # IDE
     neovim
@@ -51,7 +53,6 @@
     })
 
     # dev environment
-    python3
     pipx
     nodejs
     rustc

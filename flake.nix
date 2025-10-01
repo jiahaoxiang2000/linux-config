@@ -12,6 +12,10 @@
       url = "github:jiahaoxiang2000/blivedm_rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    danmu-tts = {
+      url = "github:jiahaoxiang2000/danmu-tts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@ inputs: {

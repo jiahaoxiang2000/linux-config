@@ -148,13 +148,20 @@
   # Enable bluetooth support.
   hardware.bluetooth = {
     enable = true;
+    powerOnBoot = true;
     settings = {
       General = {
         ControllerMode = "dual";
+        Privacy = "device";
       };
     };
   };
   services.blueman.enable = true;
+
+  # Enable Bluetooth input devices
+  hardware.bluetooth.input.General = {
+    UserspaceHID = true;
+  };
 
   # Disable specific Bluetooth controller via udev
   services.udev.extraRules = ''

@@ -72,7 +72,8 @@
     kdePackages.okular # pdf reader
     fastfetch # system info
     jq # json parser
-    
+    newsboat # news rss
+
     # video
     kdePackages.kdenlive
     mpv

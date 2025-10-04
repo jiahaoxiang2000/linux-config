@@ -39,3 +39,10 @@ Public/**
 .zcompdump*
 .gitignore
 .zsh_history
+
+.steam/**
+.steam*
+
+.newsboat/cache.db
+.newsboat/cache.db*
+.newsboat/history.*

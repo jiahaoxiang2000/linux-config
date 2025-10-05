@@ -33,6 +33,7 @@
     inputs.danmu-tts.packages.${pkgs.system}.default
 
     # IDE
+    unityhub
     neovim
     ((vscode.overrideAttrs (oldAttrs: {
       version = "1.104.2";

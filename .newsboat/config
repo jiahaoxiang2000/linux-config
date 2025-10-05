@@ -3,3 +3,14 @@ browser "firefox %u"
 bookmark-cmd ~/.newsboat/bookmark.sh
 bookmark-interactive yes
 bookmark-autopilot no
+
+# Auto-refresh on startup
+auto-reload yes
+reload-time 60      # Auto-reload every 60 minutes
+refresh-on-startup yes
+reload-threads 8    # Parallel fetch (default is 1)
+
+# Article retention
+max-items 0         # Keep all articles (0 = unlimited)
+keep-articles-days 180  # Keep articles for 180 days
+cleanup-on-quit yes    # Clean up old articles on exit

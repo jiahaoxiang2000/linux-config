@@ -99,6 +99,14 @@
     enable = true;
     # xwayland.enable = true;
   };
+  # Enable nix-ld for Run unpatched dynamic binaries on NixOS. 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      icu
+      stdenv.cc.cc.lib
+    ];
+  };
 
   # Ensure DISPLAY and WAYLAND_DISPLAY are available to user services
   environment.sessionVariables = {

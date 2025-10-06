@@ -37,6 +37,7 @@
     tree-sitter
     ripgrep
     lazygit
+    unzip
 
     # IDE
     unityhub

@@ -32,9 +32,14 @@
     inputs.blivedm_rs.packages.${pkgs.system}.default
     inputs.danmu-tts.packages.${pkgs.system}.default
 
+    # neovim 
+    neovim
+    tree-sitter
+    ripgrep
+    lazygit
+
     # IDE
     unityhub
-    neovim
     ((vscode.overrideAttrs (oldAttrs: {
       version = "1.104.2";
       src = pkgs.fetchurl {
@@ -78,6 +83,7 @@
     # video
     kdePackages.kdenlive
     mpv
+    playerctl # for controlling media player
 
     # desktop for hyprland
     foot # terminal
@@ -98,6 +104,7 @@
     source-han-sans
     source-han-mono
     font-awesome
+    nerd-fonts.zed-mono
     ## typstting
     texliveFull
     typst

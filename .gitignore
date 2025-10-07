@@ -48,3 +48,5 @@ Public/**
 .newsboat/history.*
 
 Unity/*
+.xsession-errors
+.xsession-errors*

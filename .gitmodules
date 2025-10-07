@@ -1,6 +1,6 @@
 [submodule ".config"]
 	path = .config
-	url = git@github.com:jiahaoxiang2000/arch-config.git
+	url = https://github.com/jiahaoxiang2000/arch-config.git
 [submodule ".claude"]
 	path = .claude
-	url = git@github.com:jiahaoxiang2000/claude-conf.git
+	url = https://github.com/jiahaoxiang2000/claude-conf.git

@@ -1,82 +1,97 @@
-# NixOS Configuration
+# Linux Configuration
 
-This repository contains my personal NixOS system configuration, managing both system-level and user-level settings through a declarative approach using Nix flakes and Home Manager.
+This repository contains my personal Linux system configuration files (dotfiles) for a customized development and desktop environment.
 
 ## Overview
 
-This configuration provides a complete desktop environment setup with:
+This configuration provides a complete setup with:
 
-- **River** (Wayland compositor)
-- **NVIDIA** driver support with Wayland compatibility
-- **Chinese input method** (Fcitx5 with Pinyin)
-- **Development environment** (Python, Node.js, Rust, C++)
-- **Modern desktop applications** and tools
+- **Wayland desktop environment** with River compositor
+- **Development tools** for Python, Node.js, Rust, and C++
+- **Chinese input method** support
+- **Terminal environment** with Zsh, Oh My Zsh, and custom functions
+- **Mirror configurations** for faster package downloads in China
 
 ## File Structure
 
-### Core Configuration Files
+### Configuration Directories
 
-| File                              | Purpose              | Description                                                                                                                             |
-| --------------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `flake.nix`                       | Main Input File      | Defines flake inputs (nixpkgs, home-manager, Hyprland) and system configuration structure                                               |
-| `.nix/hardware-configuration.nix` | Hardware Settings    | Auto-generated hardware-specific configuration including disk UUIDs, kernel modules, and filesystem mounts. **Do not modify manually.** |
-| `.nix/configuration.nix`          | System Configuration | System-level settings including GPU drivers, input methods, desktop environment, and system services                                    |
-| `.nix/home.nix`                   | User Configuration   | User-level packages, themes, and applications managed by Home Manager                                                                   |
+| Directory/File | Purpose             | Description                                                                |
+| -------------- | ------------------- | -------------------------------------------------------------------------- |
+| `.config/`     | Application Configs | Traditional application configuration files for desktop apps and tools     |
+| `.nix/`        | NixOS Configuration | NixOS-specific system configuration (see [.nix/README.md](.nix/README.md)) |
+| `.zshrc`       | Shell Configuration | Zsh shell configuration with Oh My Zsh, custom functions, and aliases      |
+| `.gitconfig`   | Git Configuration   | Git user settings and aliases                                              |
 
-### Additional Configuration
+### Key Configuration Files
 
-- **`.nix/`** - Directory containing all NixOS configuration files for better organization
-- **`.config/`** - Traditional application configuration files for software that doesn't use Nix for configuration
+- **`.zshrc`** - Zsh configuration with:
+  - Oh My Zsh integration
+  - Custom functions (date formatting, translation)
+  - FZF (fuzzy finder) configuration
+  - Package manager mirror settings (NPM, Pip, Rust)
+  - Proxy configuration
+  - Claude AI aliases
+
+- **`.config/`** - Application-specific configurations:
+  - River (Wayland compositor)
+  - i3status-rust (status bar)
+  - fcitx5 (input method)
+  - newsboat (RSS reader)
+  - foot (terminal)
+  - and more...
 
 ## Key Features
 
-### Desktop Environment
+### Development Environment
 
-- **River** - Tiling Wayland compositor
-- **SDDM** - Display manager with Wayland support
-- **i3bar-river** & **i3status-rust** - Status bar for River
-- **wmenu** - Wayland-native menu application
-- **GTK theming** - Adwaita dark theme with Papirus icons
-
-### Input & Internationalization
-
-- **Fcitx5** - Input method framework with Chinese support
-- **Multiple locales** - English (US) and Chinese (Simplified) support
-- **Custom hotkeys** - Alt+Space for input method switching
-
-### Development Tools
-
+- **Languages**: Python 3, Node.js (via fnm), Rust, C/C++
 - **Editors**: Neovim, VS Code
-- **Languages**: Python 3, Node.js, Rust, C/C++
-- **Writing**: LaTeX (TeXLive), Typst with Tinymist LSP
-- **Fonts**: Source Han family for Chinese text support
+- **Tools**: Git, Docker, kubectl, fzf
 
-### Hardware Support
+### Shell Enhancements
 
-- **NVIDIA drivers** - Stable drivers with Wayland modesetting
-- **Bluetooth** - Full Bluetooth support with device management
-- **Audio** - Ready for PipeWire/PulseAudio setup
+- **Oh My Zsh** with plugins: git, sudo, docker, kubectl, history, colored-man-pages, fzf
+- **Custom functions**:
+  - `mydate` - Custom date formatting
+  - `tododate` - Todo-friendly date format
+  - `tozh` / `toen` - Quick translation functions
+
+### Package Manager Mirrors
+
+Configured mirrors for faster downloads in China:
+
+- **Node/NPM**: npmmirror.com
+- **Python/pip**: pypi.tuna.tsinghua.edu.cn
+- **Rust**: mirrors.ustc.edu.cn
 
 ## Usage
 
-### Rebuilding the System
+### Applying Configuration
+
+The configuration files in this repository can be:
+
+1. Symlinked to your home directory
+2. Managed with a dotfiles manager like GNU Stow
+3. Manually copied to the appropriate locations
+
+### NixOS-Specific Setup
+
+If you're using NixOS, see [.nix/README.md](.nix/README.md) for system configuration details.
+
+### Shell Configuration
+
+After updating `.zshrc`, reload the configuration:
 
 ```bash
-# Rebuild and switch to new configuration
-sudo nixos-rebuild switch --flake .#desktop
-
-# Test configuration without switching
-sudo nixos-rebuild test --flake .#desktop
-
-# Build configuration without activating
-sudo nixos-rebuild build --flake .#desktop
+source ~/.zshrc
 ```
 
 ## System Information
 
-- **NixOS Version**: 25.05
-- **Architecture**: x86_64-linux
-- **Boot Loader**: systemd-boot (UEFI)
-- **Window Manager**: River (Wayland)
+- **OS**: Arch Linux
+- **Shell**: Zsh with Oh My Zsh
 - **Display Protocol**: Wayland
+- **Compositor**: River
+- **Input Method**: Fcitx5
 - **Time Zone**: Asia/Hong_Kong

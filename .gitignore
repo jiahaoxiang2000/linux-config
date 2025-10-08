@@ -28,6 +28,7 @@ Music/**
 Videos/**
 Templates/**
 Public/**
+code/**
 
 .nix-profile
 .claude.*

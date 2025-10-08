@@ -130,6 +130,13 @@ export no_proxy=localhost,127.0.0.1,::1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
 export FNM_NODE_DIST_MIRROR=https://npmmirror.com/mirrors/node
 export NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
 
+# Python/pip mirror configuration
+export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+
+# Rust/cargo mirror configuration
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
 # ============================================================================
 # FZF CONFIGURATION
 # ============================================================================

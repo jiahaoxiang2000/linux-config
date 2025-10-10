@@ -116,11 +116,11 @@ export QT_QPA_PLATFORM=wayland
 # ============================================================================
 
 # Global proxy settings
-export http_proxy=http://192.168.71.202:7890
-export https_proxy=http://192.168.71.202:7890
-export HTTP_PROXY=http://192.168.71.202:7890
-export HTTPS_PROXY=http://192.168.71.202:7890
-export no_proxy=localhost,127.0.0.1,::1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
+# export http_proxy=http://192.168.71.202:7890
+# export https_proxy=http://192.168.71.202:7890
+# export HTTP_PROXY=http://192.168.71.202:7890
+# export HTTPS_PROXY=http://192.168.71.202:7890
+# export no_proxy=localhost,127.0.0.1,::1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
 
 # ============================================================================
 # PACKAGE MANAGER INTEGRATIONS
@@ -182,8 +182,12 @@ function toen() {
 # CLAUDE FUNCTIONS
 # ============================================================================
 
+# Source token file if it exists (makes LLM API tokens available)
+[[ -f ~/.token ]] && source ~/.token
+
 # Original Claude with proxy settings
 alias claude='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080 claude'
+# alias claude-proxy='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080 claude'
 
 # Codex routed through the same local proxy
 alias codex-proxy='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080 codex'

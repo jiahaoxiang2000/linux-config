@@ -53,3 +53,5 @@ Unity/*
 .oh-my-zsh/
 .xsession-errors*
 .token
+.ipython/*
+.sage/*

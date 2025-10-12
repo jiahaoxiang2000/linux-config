@@ -8,6 +8,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 # Add pipx local bin to PATH
 export PATH=$HOME/.local/bin:$PATH
 
+# Add custom sh local bin to PATH
+export PATH=$HOME/.sh:$PATH
+
 # Add npm global bin to PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 

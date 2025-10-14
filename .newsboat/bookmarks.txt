@@ -1,3 +1,4 @@
 2025-10-04 21:41:04 | Writing effective tools for agents — with agents | https://www.anthropic.com/engineering/writing-tools-for-agents | Anthropic Engineering
 2025-10-04 21:57:11 | Claude Code: Best practices for agentic coding | https://www.anthropic.com/engineering/claude-code-best-practices | Anthropic Engineering
 2025-10-04 22:04:30 | A postmortem of three recent issues | https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues | Anthropic Engineering
+2025-10-14 11:14:56 | How to build reliable AI workflows with agentic primitives and context engineering | https://github.blog/ai-and-ml/github-copilot/how-to-build-reliable-ai-workflows-with-agentic-primitives-and-context-engineering/ | 📚 Blogs

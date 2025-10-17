@@ -56,3 +56,6 @@ Unity/*
 .ipython/*
 .sage/*
 .pulse-cookie
+.xwechat/*
+xwechat_files
+.sys1og.conf

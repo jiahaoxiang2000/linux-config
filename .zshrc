@@ -105,15 +105,6 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-# Display scaling configuration
-export QT_FONT_DPI=120
-export QT_SCALE_FACTOR=0.8
-
-# Wayland configuration
-export UNITY_WAYLAND=1
-export GDK_BACKEND=wayland
-export QT_QPA_PLATFORM=wayland
-
 # ============================================================================
 # PROXY CONFIGURATION
 # ============================================================================

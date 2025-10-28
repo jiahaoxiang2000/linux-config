@@ -164,12 +164,14 @@ function tododate() {
 
 # Quick translation to Chinese function
 function tozh() {
-    trans-cli "$@"
+    # trans-cli "$@"
+    trans --target-lang zh_CN "$@"
 }
 
 # Translation from Chinese to English function
 function toen() {
-    trans-cli -f zh -t en "$@"
+    # trans-cli -f zh -t en "$@"
+    trans --target-lang en "$@"
 }
 
 # ============================================================================

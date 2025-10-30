@@ -59,7 +59,9 @@ Alignment=2'" \
 
 if [ $? -eq 0 ]; then
     echo "Success! Output saved to: $OUTPUT_VIDEO"
+    dunstify -u normal "Subtitle Addition Complete" "Output saved to: $OUTPUT_VIDEO"
 else
     echo "Error: ffmpeg command failed"
+    dunstify -u critical "Subtitle Addition Failed" "ffmpeg command failed"
     exit 1
 fi

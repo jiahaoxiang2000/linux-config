@@ -4,3 +4,6 @@
 [submodule ".claude"]
 	path = .claude
 	url = https://github.com/jiahaoxiang2000/claude-conf.git
+[submodule ".qwen"]
+	path = .qwen
+	url = https://github.com/jiahaoxiang2000/qwen-config.git

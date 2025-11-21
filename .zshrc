@@ -131,6 +131,10 @@ export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
+# Maven mirror configuration
+export MAVEN_OPTS="-Dmaven.repo.local=$HOME/.m2/repository"
+alias mvn='mvn -s $HOME/.m2/settings.xml'
+
 # ============================================================================
 # FZF CONFIGURATION
 # ============================================================================
@@ -189,10 +193,14 @@ alias claude='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080
 alias codex-proxy='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080 codex'
 
 # Claude with DeepSeek API
-alias claude-deepseek='source ~/.token && ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" claude'
+alias claude-deepseek='source ~/.token && ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" /home/isomo/.npm-global/bin/claude'
 
 # Claude with Kimi (Moonshot) API
-alias claude-kimi='source ~/.token && ANTHROPIC_AUTH_TOKEN=$KIMI_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.moonshot.cn/v1" ANTHROPIC_MODEL="kimi-k2-0905-preview" ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-0905-preview" claude'
+alias claude-kimi='source ~/.token && ANTHROPIC_AUTH_TOKEN=$KIMI_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic" ANTHROPIC_MODEL="kimi-k2-turbo-preview" ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview" claude'
 
 # Claude with BigModel API
 alias claude-bigmodel='source ~/.token && ANTHROPIC_AUTH_TOKEN=$BIGMODEL_AUTH_TOKEN ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic" ANTHROPIC_MODEL="GLM-4.5" ANTHROPIC_SMALL_FAST_MODEL="GLM-4.5-Air" claude'
+
+# Qwen with Bailian API
+alias qwen-bailian='source ~/.token && OPENAI_API_KEY=$QWEN_AUTH_TOKEN OPENAI_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1" OPENAI_MODEL="qwen3-coder-plus" qwen'
+

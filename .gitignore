@@ -68,6 +68,3 @@ xwechat_files
 .codeql/compile-cache
 .codeql/packages/codeql
 .lemminx/cache/http/maven.apache.org/xsd
-.qwen/tmp/70dca3adaa003023d4aec20d98b7802c0c6a94f87a75f4febaec13b6090f2dba
-.qwen/installation_id
-.qwen/oauth_creds.json

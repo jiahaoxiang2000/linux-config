@@ -199,7 +199,7 @@ alias claude-deepseek='source ~/.token && ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TO
 alias claude-kimi='source ~/.token && ANTHROPIC_AUTH_TOKEN=$KIMI_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic" ANTHROPIC_MODEL="kimi-k2-turbo-preview" ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview" claude'
 
 # Claude with BigModel API
-alias claude-bigmodel='source ~/.token && ANTHROPIC_AUTH_TOKEN=$BIGMODEL_AUTH_TOKEN ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic" API_TIMEOUT_MS=3000000 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 claude'
+alias claude-bigmodel='source ~/.token && ANTHROPIC_AUTH_TOKEN=$BIGMODEL_AUTH_TOKEN ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic" API_TIMEOUT_MS=3000000 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="glm-4.6" claude'
 
 # Qwen with Bailian API
 alias qwen-bailian='source ~/.token && OPENAI_API_KEY=$QWEN_AUTH_TOKEN OPENAI_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1" OPENAI_MODEL="qwen3-coder-plus" qwen'

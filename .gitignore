@@ -68,3 +68,4 @@ xwechat_files
 .codeql/compile-cache
 .codeql/packages/codeql
 .lemminx/cache/http/maven.apache.org/xsd
+.wget-hsts

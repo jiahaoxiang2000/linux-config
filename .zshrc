@@ -85,6 +85,9 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git sudo docker kubectl history colored-man-pages fzf)
 
+# Add custom completions directory to fpath (before sourcing oh-my-zsh)
+fpath=(~/.zsh/completions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # ============================================================================

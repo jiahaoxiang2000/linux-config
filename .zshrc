@@ -90,6 +90,9 @@ fpath=(~/.zsh/completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
+# Setup zoxide on your shell
+eval "$(zoxide init zsh)"
+
 # ============================================================================
 # USER CONFIGURATION
 # ============================================================================

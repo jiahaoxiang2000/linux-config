@@ -69,3 +69,4 @@ xwechat_files
 .codeql/packages/codeql
 .lemminx/cache/http/maven.apache.org/xsd
 .wget-hsts
+.platformio

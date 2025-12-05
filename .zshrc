@@ -199,7 +199,7 @@ alias claude='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080
 alias codex-proxy='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080 codex'
 
 # Claude with DeepSeek API
-alias claude-deepseek='source ~/.token && ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" /home/isomo/.npm-global/bin/claude'
+alias claude-deepseek='source ~/.token && ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" /home/isomo/.npm-global/bin/claude'
 
 # Claude with Kimi (Moonshot) API
 alias claude-kimi='source ~/.token && ANTHROPIC_AUTH_TOKEN=$KIMI_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic" ANTHROPIC_MODEL="kimi-k2-turbo-preview" ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview" /home/isomo/.npm-global/bin/claude'

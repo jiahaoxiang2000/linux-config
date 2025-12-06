@@ -201,6 +201,9 @@ alias claude='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080
 # Codex routed through the same local proxy
 alias codex-proxy='http_proxy=http://localhost:1080 https_proxy=http://localhost:1080 codex'
 
+# OpenCode with proxy settings (SOCKS5 via SSH tunnel)
+alias opencode-proxy='HTTPS_PROXY=http://localhost:1080 opencode'
+
 # Claude with DeepSeek API
 alias claude-deepseek='source ~/.token && ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" /home/isomo/.npm-global/bin/claude'
 

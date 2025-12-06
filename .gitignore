@@ -70,3 +70,4 @@ xwechat_files
 .lemminx/cache/http/maven.apache.org/xsd
 .wget-hsts
 .platformio
+.bun

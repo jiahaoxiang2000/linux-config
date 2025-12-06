@@ -14,6 +14,9 @@ export PATH=$HOME/.sh:$PATH
 # Add npm global bin to PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 
+# Add bun gloabl bin to PATH
+export PATH="$HOME/.bun/bin:$PATH"
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 

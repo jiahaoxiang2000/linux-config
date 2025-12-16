@@ -20,6 +20,9 @@ export PATH="$HOME/.bun/bin:$PATH"
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# opencode
+export PATH=/home/isomo/.opencode/bin:$PATH
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -162,6 +165,9 @@ export FZF_ALT_C_COMMAND="find . -type f"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+# node version manager
+source /usr/share/nvm/init-nvm.sh
+
 # ============================================================================
 # CUSTOM FUNCTIONS
 # ============================================================================
@@ -215,4 +221,5 @@ alias claude-bigmodel='source ~/.token && ANTHROPIC_AUTH_TOKEN=$BIGMODEL_AUTH_TO
 
 # Qwen with Bailian API
 alias qwen-bailian='source ~/.token && OPENAI_API_KEY=$QWEN_AUTH_TOKEN OPENAI_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1" OPENAI_MODEL="qwen3-coder-plus" qwen'
+
 

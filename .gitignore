@@ -72,3 +72,5 @@ xwechat_files
 .platformio
 .bun
 hp-check.log
+.nvm
+.opencode/bin

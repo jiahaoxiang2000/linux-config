@@ -1,0 +1,335 @@
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --overlay-bg: rgba(255, 255, 255, 0.95);
+  --text-color: #1f2937;
+  --text-secondary: #6b7280;
+  --shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --vh: 1vh;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    sans-serif;
+  color: var(--text-color);
+  background: #1a1a2e;
+}
+
+/* Map container */
+.map-container {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Custom background map wrapper */
+.map-wrapper,
+#map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  z-index: 1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1a1a2e;
+}
+
+/* Portrait mode - rotate map to landscape */
+@media (orientation: portrait) {
+  .map-wrapper,
+  #map {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    width: calc(var(--vh, 1vh) * 100);
+    height: 100vw;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center center;
+  }
+}
+
+/* Transparent clickable marker styles */
+/* The red buttons are already drawn on the background image,
+   so we only create invisible clickable areas over them */
+/* Size is set dynamically by JavaScript based on background scale */
+.location-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.location-marker:hover {
+  z-index: 20;
+  /* Temporary blue highlight for easy alignment */
+  background: rgba(0, 100, 255, 0.5);
+  box-shadow: 0 0 12px rgba(0, 100, 255, 0.8);
+}
+
+/* Active state - subtle glow */
+.location-marker.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+}
+
+/* Marker size is now handled dynamically by JavaScript */
+
+/* Intro video button - square transparent button */
+.intro-video-btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.2s ease;
+}
+
+.intro-video-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.intro-video-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Label above the button - red background with white text */
+.intro-video-btn .intro-label {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: red;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 22px;
+  white-space: nowrap;
+  margin-bottom: 6px;
+}
+
+/* Outro video button - rectangular transparent button (800x100) */
+.outro-video-btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.2s ease;
+}
+
+.outro-video-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.outro-video-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Fullscreen video overlay */
+.info-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  transform: translateY(100%);
+  transition: transform 0.5s var(--transition-smooth);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.info-overlay.active {
+  transform: translateY(0);
+}
+
+/* Hide handle when video is playing */
+.info-handle {
+  display: none;
+}
+
+.info-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Video container - always landscape orientation, fill page */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+/* Close/Back button - larger and more visible */
+.video-close-btn {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8vmin;
+  height: 8vmin;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  color: #FFD700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.video-close-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFC107;
+  transform: scale(1.1);
+}
+
+.video-close-btn:active {
+  transform: scale(0.95);
+}
+
+.video-close-btn svg {
+  width: 4vmin;
+  height: 4vmin;
+  stroke-width: 2.5;
+}
+
+/* Hide text, only show icon */
+.video-close-btn span {
+  display: none;
+}
+
+/* Video loading indicator */
+.video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 105;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.video-loading.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.video-player {
+  background: black;
+  pointer-events: auto;
+  object-fit: contain;
+}
+
+/* Make video controls larger */
+.video-player::-webkit-media-controls-panel {
+  transform: scale(2);
+  transform-origin: bottom center;
+}
+
+.video-player::-webkit-media-controls-play-button,
+.video-player::-webkit-media-controls-current-time-display,
+.video-player::-webkit-media-controls-time-remaining-display,
+.video-player::-webkit-media-controls-timeline,
+.video-player::-webkit-media-controls-volume-slider,
+.video-player::-webkit-media-controls-mute-button,
+.video-player::-webkit-media-controls-fullscreen-button {
+  transform: scale(1.5);
+}
+
+/* Landscape mode - video fills the screen normally */
+@media (orientation: landscape) {
+  .video-player {
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+/* Portrait mode - rotate video to landscape for better viewing */
+@media (orientation: portrait) {
+  .video-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 100vh;
+    width: calc(var(--vh, 1vh) * 100);
+    height: 100vw;
+  }
+
+  .video-player {
+    width: 100%;
+    height: 100%;
+  }
+}

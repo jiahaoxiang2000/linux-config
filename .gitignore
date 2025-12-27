@@ -74,3 +74,6 @@ xwechat_files
 hp-check.log
 .nvm
 .opencode/bin
+.emacs.d
+.spacemacs
+.spacemacs.env

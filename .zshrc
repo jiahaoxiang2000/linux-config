@@ -215,18 +215,18 @@ alias oc='opencode'
 alias ocp='opencode-proxy'
 
 # Claude with DeepSeek API
-alias claude-deepseek='ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" /home/isomo/.bun/bin/claude'
+alias claude-deepseek='ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
 
 # Claude with Kimi (Moonshot) API
-alias claude-kimi='ANTHROPIC_AUTH_TOKEN=$KIMI_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic" ANTHROPIC_MODEL="kimi-k2-turbo-preview" ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview" /home/isomo/.bun/bin/claude'
+alias claude-kimi='ANTHROPIC_AUTH_TOKEN=$KIMI_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic" ANTHROPIC_MODEL="kimi-k2-turbo-preview" ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
 
 # Claude with BigModel API
-alias claude-bigmodel='ANTHROPIC_AUTH_TOKEN=$BIGMODEL_AUTH_TOKEN ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic" API_TIMEOUT_MS=3000000 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="glm-4.6" /home/isomo/.bun/bin/claude'
+alias claude-bigmodel='ANTHROPIC_AUTH_TOKEN=$BIGMODEL_AUTH_TOKEN ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic" API_TIMEOUT_MS=3000000 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="glm-4.7" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
 
 # Qwen with Bailian API
 alias qwen-bailian='OPENAI_API_KEY=$QWEN_AUTH_TOKEN OPENAI_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1" OPENAI_MODEL="qwen3-coder-plus" qwen'
 
 # Claude with MiMo API
-alias claude-mimo='ANTHROPIC_AUTH_TOKEN=$MIMO_API_KEY ANTHROPIC_BASE_URL="https://api.xiaomimimo.com/anthropic" ANTHROPIC_DEFAULT_OPUS_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_SONNET_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_HAIKU_MODEL="mimo-v2-flash" /home/isomo/.bun/bin/claude'
+alias claude-mimo='ANTHROPIC_AUTH_TOKEN=$MIMO_API_KEY ANTHROPIC_BASE_URL="https://api.xiaomimimo.com/anthropic" ANTHROPIC_DEFAULT_OPUS_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_SONNET_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_HAIKU_MODEL="mimo-v2-flash" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
 
 

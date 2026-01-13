@@ -113,7 +113,6 @@ SAVEHIST=50000
 # ============================================================================
 
 # Input method configuration for IBus/fcitx with Electron apps like VSCode
-export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 

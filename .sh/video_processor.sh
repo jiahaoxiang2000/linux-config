@@ -5,28 +5,21 @@
 
 set -e
 
-# Color codes for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
-
-# Print colored messages
+# Print messages
 print_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+    echo "[INFO] $1"
 }
 
 print_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
+    echo "[SUCCESS] $1"
 }
 
 print_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+    echo "[WARNING] $1"
 }
 
 print_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+    echo "[ERROR] $1"
 }
 
 # Check dependencies
@@ -110,15 +103,15 @@ trim_video() {
 analyze_audio_volume() {
     local input_file="$1"
 
-    print_info "Analyzing audio volume for: $input_file"
+    print_info "Analyzing audio volume for: $input_file" >&2
 
     local stats=$(ffmpeg -i "$input_file" -af "volumedetect" -vn -sn -dn -f null /dev/null 2>&1 | grep -E "mean_volume|max_volume")
 
     local mean_volume=$(echo "$stats" | grep "mean_volume" | awk '{print $5}')
     local max_volume=$(echo "$stats" | grep "max_volume" | awk '{print $5}')
 
-    print_info "Mean volume: ${mean_volume} dB"
-    print_info "Max volume: ${max_volume} dB"
+    print_info "Mean volume: ${mean_volume} dB" >&2
+    print_info "Max volume: ${max_volume} dB" >&2
 
     echo "$mean_volume"
 }
@@ -221,12 +214,12 @@ process_video() {
 # Show usage
 show_usage() {
     cat << EOF
-${BLUE}Video Processor for OBS Recordings${NC}
+Video Processor for OBS Recordings
 
-${YELLOW}Usage:${NC}
+Usage:
     $0 <command> [options]
 
-${YELLOW}Commands:${NC}
+Commands:
     trim              Trim video from start/end
     normalize         Normalize audio volume
     analyze           Analyze audio volume
@@ -234,30 +227,30 @@ ${YELLOW}Commands:${NC}
     process           Run full processing pipeline
     help              Show this help message
 
-${YELLOW}Trim Usage:${NC}
+Trim Usage:
     $0 trim <input_video> <output_video> <start_trim> <end_trim>
     Example: $0 trim input.mp4 output.mp4 00:00:10 00:00:05
     (Trims 10 seconds from start and 5 seconds from end)
 
-${YELLOW}Normalize Usage:${NC}
+Normalize Usage:
     $0 normalize <input_video> <output_video> [target_volume_dB]
     Example: $0 normalize input.mp4 output.mp4 -16
     (Normalizes to -16 dB, default for YouTube/podcasts)
 
-${YELLOW}Analyze Usage:${NC}
+Analyze Usage:
     $0 analyze <input_video>
     Example: $0 analyze input.mp4
 
-${YELLOW}Mix Usage:${NC}
+Mix Usage:
     $0 mix <input_video> <background_music> <output_video> [music_volume] [video_audio_volume]
     Example: $0 mix input.mp4 music.mp3 output.mp4 0.3 1.0
     (music_volume=0.3 means 30% of original music volume)
 
-${YELLOW}Process Usage (Full Pipeline):${NC}
+Process Usage (Full Pipeline):
     $0 process <input_video> <background_music> <output_video> <start_trim> <end_trim> [target_volume] [music_volume]
     Example: $0 process recording.mp4 bg.mp3 final.mp4 00:00:05 00:00:10 -16 0.25
 
-${YELLOW}Time Format:${NC}
+Time Format:
     Use HH:MM:SS format (e.g., 00:01:30) or seconds (e.g., 90)
 
 EOF

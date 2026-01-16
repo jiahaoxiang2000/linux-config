@@ -79,3 +79,5 @@ hp-check.log
 .spacemacs.env
 .vibe-kanban/opencode_sessions
 .vibe-kanban/bin/
+.gemini
+.antigravity/extensions

@@ -20,5 +20,6 @@ http://43.128.87.171:5000/qbitai/category/资讯 "~量子位资讯" "news" "!"
 
 # AI news
 http://43.128.87.171:5000/zhihu/zhuanlan/c_1885342192987509163 "~橘鸦的AI日志" "ai" "!"
+https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml "~Rundown AI" "ai" "!"
 https://api.xgo.ing/rss/user/0c0856a69f9f49cf961018c32a0b0049 "~@OpenAI" "ai" "!"
 https://api.xgo.ing/rss/user/fc28a211471b496682feff329ec616e5 "~@AnthropicAI" "ai" "!"

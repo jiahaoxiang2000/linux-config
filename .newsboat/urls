@@ -1,22 +1,24 @@
-"query:📚 Blogs:tags # \"blog\""
-"query:📰 News:tags # \"news\""
+"query:Blogs:tags # \"blog\""
+"query:News:tags # \"news\""
+"query:AI:tags # \"ai\""
+
+# 43.128.87.171 is slef-host rsshub, see all routes in https://docs.rsshub.app/routes/ 
+# NOTE: this is temp URL.
 
 # Blogs (hidden from feed list)
-
 https://jiahaoxiang2000.github.io/feed.xml "~Isomo Blog" "blog" "!"
 https://github.blog/feed/ "~Github Blog" "blog" "!"
-https://rsshub.app/anthropic/engineering "~Anthropic Engineering" "blog" "!"
-https://www.msoos.org/feed/ "~Wonderings of a SAT geek" "blog" "!"
+http://43.128.87.171:5000/anthropic/engineering "~Anthropic Engineering" "blog" "!"
 https://cline.ghost.io/rss/ "~Cline - AI tool" "blog" "!"
 
 
 # News (hidden from feed list)
-
-https://api.xgo.ing/rss/user/0c0856a69f9f49cf961018c32a0b0049 "~OpenAI(@OpenAI)" "news" "!"
-https://api.xgo.ing/rss/user/fc28a211471b496682feff329ec616e5 "~Anthropic(@AnthropicAI)" "news" "!"
-https://rsshub.app/aibase/daily "~AI日报" "news" "!"
 https://wechat2rss.bestblogs.dev/feed/38be32e5376d852c13d3383e4d7a757fd9a55ff6.xml "~逛逛GitHub" "news" "!"
 https://github.blog/changelog/feed/ "~GitHub Changelog" "news" "!"
 https://hacker-news.agi.li/rss.xml "~Hacker News AI" "news" "!"
-https://rsshub.app/twitter/user/METR_Evals "~METR evaluates frontier AI models" "news" "!"
+http://43.128.87.171:5000/qbitai/category/资讯 "~量子位资讯" "news" "!"
 
+# AI news
+http://43.128.87.171:5000/zhihu/zhuanlan/c_1885342192987509163 "~橘鸦的AI日志" "ai" "!"
+https://api.xgo.ing/rss/user/0c0856a69f9f49cf961018c32a0b0049 "~@OpenAI" "ai" "!"
+https://api.xgo.ing/rss/user/fc28a211471b496682feff329ec616e5 "~@AnthropicAI" "ai" "!"

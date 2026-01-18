@@ -10,6 +10,7 @@ http://43.128.87.171:5000/zhihu/zhuanlan/c_1885342192987509163 "~橘鸦的AI日�
 https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml "~Rundown AI" "ai" "!"
 https://api.xgo.ing/rss/user/0c0856a69f9f49cf961018c32a0b0049 "~@OpenAI" "ai" "!"
 https://api.xgo.ing/rss/user/fc28a211471b496682feff329ec616e5 "~@AnthropicAI" "ai" "!"
+https://cline.ghost.io/rss/ "~Cline - AI tool" "ai" "!"
 
 # News (hidden from feed list)
 https://wechat2rss.bestblogs.dev/feed/38be32e5376d852c13d3383e4d7a757fd9a55ff6.xml "~逛逛GitHub" "news" "!"
@@ -21,4 +22,3 @@ http://43.128.87.171:5000/qbitai/category/资讯 "~量子位资讯" "news" "!"
 https://jiahaoxiang2000.github.io/feed.xml "~Isomo Blog" "blog" "!"
 https://github.blog/feed/ "~Github Blog" "blog" "!"
 http://43.128.87.171:5000/anthropic/engineering "~Anthropic Engineering" "blog" "!"
-https://cline.ghost.io/rss/ "~Cline - AI tool" "blog" "!"

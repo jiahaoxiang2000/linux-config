@@ -173,11 +173,11 @@ source /usr/share/nvm/init-nvm.sh
 
 # Custom date format function - formats date in YYYY-MM-DD HH:MM:SS TZ format (24-hour, no weekday)
 function mydate() {
-    date +"%Y-%m-%d %H:%M:%S %Z %a"
+    date +"%Y%m%d %H:%M:%S %Z %a"
 }
 
 function tododate() {
-    date +"%Y-%m-%d %a"
+    date +"%Y%m%d %a"
 }
 
 # Quick translation to Chinese function
@@ -229,3 +229,6 @@ alias qwen-bailian='OPENAI_API_KEY=$QWEN_AUTH_TOKEN OPENAI_BASE_URL="https://das
 alias claude-mimo='ANTHROPIC_AUTH_TOKEN=$MIMO_API_KEY ANTHROPIC_BASE_URL="https://api.xiaomimimo.com/anthropic" ANTHROPIC_DEFAULT_OPUS_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_SONNET_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_HAIKU_MODEL="mimo-v2-flash" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
 
 
+
+# bun completions
+[ -s "/home/isomo/.oh-my-zsh/completions/_bun" ] && source "/home/isomo/.oh-my-zsh/completions/_bun"

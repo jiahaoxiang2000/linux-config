@@ -81,3 +81,5 @@ hp-check.log
 .vibe-kanban/bin/
 .gemini
 .antigravity/extensions
+go/pkg/mod
+.termdbms

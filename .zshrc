@@ -11,9 +11,6 @@ export PATH=$HOME/.local/bin:$PATH
 # Add custom sh local bin to PATH
 export PATH=$HOME/.sh:$PATH
 
-# Add npm global bin to PATH
-export PATH=$HOME/.npm-global/bin:$PATH
-
 # Add bun gloabl bin to PATH
 export PATH="$HOME/.bun/bin:$PATH"
 
@@ -21,7 +18,7 @@ export PATH="$HOME/.bun/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
 # opencode
-export PATH=/home/isomo/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -214,21 +211,21 @@ alias oc='opencode'
 alias ocp='opencode-proxy'
 
 # Claude with DeepSeek API
-alias claude-deepseek='ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
+alias claude-deepseek='ANTHROPIC_AUTH_TOKEN=$DEEPSEEK_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic" ANTHROPIC_MODEL="deepseek-chat" CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-chat" ANTHROPIC_SMALL_FAST_MODEL="deepseek-chat" $HOME/.local/bin/claude'
 
 # Claude with Kimi (Moonshot) API
-alias claude-kimi='ANTHROPIC_AUTH_TOKEN=$KIMI_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic" ANTHROPIC_MODEL="kimi-k2-turbo-preview" ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
+alias claude-kimi='ANTHROPIC_AUTH_TOKEN=$KIMI_AUTH_TOKEN ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic" ANTHROPIC_MODEL="kimi-k2-turbo-preview" ANTHROPIC_SMALL_FAST_MODEL="kimi-k2-turbo-preview" $HOME/.local/bin/claude'
 
 # Claude with BigModel API
-alias ccg='ANTHROPIC_AUTH_TOKEN=$BIGMODEL_AUTH_TOKEN ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic" API_TIMEOUT_MS=3000000 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="glm-4.7" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
+alias ccg='ANTHROPIC_AUTH_TOKEN=$BIGMODEL_AUTH_TOKEN ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic" API_TIMEOUT_MS=3000000 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ANTHROPIC_DEFAULT_SONNET_MODEL="glm-4.7" $HOME/.local/bin/claude'
 
 # Qwen with Bailian API
 alias qwen-bailian='OPENAI_API_KEY=$QWEN_AUTH_TOKEN OPENAI_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1" OPENAI_MODEL="qwen3-coder-plus" qwen'
 
 # Claude with MiMo API
-alias claude-mimo='ANTHROPIC_AUTH_TOKEN=$MIMO_API_KEY ANTHROPIC_BASE_URL="https://api.xiaomimimo.com/anthropic" ANTHROPIC_DEFAULT_OPUS_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_SONNET_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_HAIKU_MODEL="mimo-v2-flash" /home/isomo/.nvm/versions/node/v24.12.0/bin/claude'
+alias claude-mimo='ANTHROPIC_AUTH_TOKEN=$MIMO_API_KEY ANTHROPIC_BASE_URL="https://api.xiaomimimo.com/anthropic" ANTHROPIC_DEFAULT_OPUS_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_SONNET_MODEL="mimo-v2-flash" ANTHROPIC_DEFAULT_HAIKU_MODEL="mimo-v2-flash" $HOME/.local/bin/claude'
 
 
 
 # bun completions
-[ -s "/home/isomo/.oh-my-zsh/completions/_bun" ] && source "/home/isomo/.oh-my-zsh/completions/_bun"
+[ -s "$HOME/.oh-my-zsh/completions/_bun" ] && source "$HOME/.oh-my-zsh/completions/_bun"

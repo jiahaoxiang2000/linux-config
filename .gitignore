@@ -30,6 +30,7 @@ Templates/**
 Public/**
 code/**
 
+
 .nix-profile
 .claude.*
 .bash_history
@@ -83,3 +84,14 @@ hp-check.log
 .antigravity/extensions
 go/pkg/mod
 .termdbms
+.conda
+.continue
+.yarn
+.lingma
+
+# macOS system files
+.DS_Store
+Library/**
+Movies/**
+Sunlogin/**
+anaconda3/**

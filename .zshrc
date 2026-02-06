@@ -157,12 +157,21 @@ export FZF_ALT_C_OPTS="--preview 'bat --style=numbers --color=always {} 2> /dev/
 export FZF_CTRL_T_COMMAND="find . -type d"
 export FZF_ALT_C_COMMAND="find . -type f"
 
-# Source fzf key bindings and completion
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# Source fzf key bindings and completion (macOS/Linux compatible)
+if [[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]]; then
+    source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+    source /opt/homebrew/opt/fzf/shell/completion.zsh
+else
+    source /usr/share/fzf/key-bindings.zsh 2>/dev/null
+    source /usr/share/fzf/completion.zsh 2>/dev/null
+fi
 
-# node version manager
-source /usr/share/nvm/init-nvm.sh
+# node version manager (check if file exists before sourcing)
+if [[ -f /usr/share/nvm/init-nvm.sh ]]; then
+    source /usr/share/nvm/init-nvm.sh
+elif [[ -f ~/.nvm/nvm.sh ]]; then
+    source ~/.nvm/nvm.sh
+fi
 
 # ============================================================================
 # CUSTOM FUNCTIONS

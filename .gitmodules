@@ -1,9 +1,9 @@
-[submodule ".config"]
-	path = .config
-	url = https://github.com/jiahaoxiang2000/arch-config.git
 [submodule ".claude"]
 	path = .claude
-	url = https://github.com/jiahaoxiang2000/claude-conf.git
+	url = https://github.com/isomoes/claude-conf.git
 [submodule ".qwen"]
 	path = .qwen
-	url = https://github.com/jiahaoxiang2000/qwen-config.git
+	url = https://github.com/isomoes/qwen-config.git
+[submodule ".config"]
+	path = .config
+	url = https://github.com/isomoes/arch-config.git

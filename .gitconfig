@@ -1,9 +1,3 @@
 [user]
 	email = jiahaoxiang2000@gmail.com
 	name = isomo
-[credential "https://github.com"]
-	helper = !/opt/homebrew/bin/gh auth git-credential || /usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = !/opt/homebrew/bin/gh auth git-credential || /usr/bin/gh auth git-credential
-[credential]
-	helper = !/opt/homebrew/bin/gh auth git-credential || /usr/bin/gh auth git-credential

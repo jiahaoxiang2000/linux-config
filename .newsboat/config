@@ -14,3 +14,9 @@ reload-threads 8    # Parallel fetch (default is 1)
 max-items 0         # Keep all articles (0 = unlimited)
 keep-articles-days 180  # Keep articles for 180 days
 cleanup-on-quit yes    # Clean up old articles on exit
+
+# Vim-style navigation
+bind-key j down
+bind-key k up
+bind-key f pagedown
+bind-key b pageup

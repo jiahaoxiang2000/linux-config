@@ -20,6 +20,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
 
+# Add Node@24 to PATH (macOS Homebrew)
+if [[ "$OSTYPE" == darwin* ]] && [[ -d /opt/homebrew/opt/node@24/bin ]]; then
+    export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
+fi
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -128,16 +133,19 @@ export XMODIFIERS=@im=fcitx
 # PACKAGE MANAGER INTEGRATIONS
 # ============================================================================
 
-# Node and NPM mirror configuration for Chinese users
-export FNM_NODE_DIST_MIRROR=https://npmmirror.com/mirrors/node
-export NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
+# Package manager mirror configurations (Linux only)
+if [[ "$OSTYPE" == linux* ]]; then
+    # Node and NPM mirror configuration for Chinese users
+    export FNM_NODE_DIST_MIRROR=https://npmmirror.com/mirrors/node
+    export NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
 
-# Python/pip mirror configuration
-export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+    # Python/pip mirror configuration
+    export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 
-# Rust/cargo mirror configuration
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+    # Rust/cargo mirror configuration
+    export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+    export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+fi
 
 # Maven mirror configuration
 export MAVEN_OPTS="-Dmaven.repo.local=$HOME/.m2/repository"
@@ -238,3 +246,5 @@ alias claude-mimo='ANTHROPIC_AUTH_TOKEN=$MIMO_API_KEY ANTHROPIC_BASE_URL="https:
 
 # bun completions
 [ -s "$HOME/.oh-my-zsh/completions/_bun" ] && source "$HOME/.oh-my-zsh/completions/_bun"
+export PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple
+alias python=/opt/homebrew/bin/python3

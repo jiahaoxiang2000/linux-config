@@ -13,3 +13,6 @@
 [submodule ".codex"]
 	path = .codex
 	url = https://github.com/isomoes/codex-config.git
+[submodule ".pi"]
+	path = .pi
+	url = https://github.com/isomoes/pi-config.git

@@ -40,6 +40,7 @@ code/**
 .histfile
 .zcompdump*
 .gitignore
+!.dsh/.gitignore
 .zsh_history
 
 .steam/**
@@ -133,3 +134,6 @@ Applications/Claude Code URL Handler.app/Contents
 /.ZAP
 /.pdcp
 /.pi-subagents/artifacts
+/.dit/model.json
+/go/bin
+/nuclei-templates

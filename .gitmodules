@@ -16,3 +16,6 @@
 [submodule ".pi"]
 	path = .pi
 	url = https://github.com/isomoes/pi-config.git
+[submodule ".dsh"]
+	path = .dsh
+	url = https://github.com/isomoes/dsh-config.git

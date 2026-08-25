@@ -1,0 +1,14 @@
+/.anonymous-user-id
+/sessions
+/storages
+/attachments/
+
+# Node.js dependencies
+**/node_modules/
+
+# pnpm files and directories
+**/.pnpm/
+**/.pnpm-store/
+**/pnpm-lock.yaml
+**/pnpm-workspace.yaml
+**/pnpm-debug.log*

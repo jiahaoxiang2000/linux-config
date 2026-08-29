@@ -1,0 +1,13 @@
+ui-onboarding:
+  welcomeNoticeVersion: 2026-08-13.1
+ui-theme:
+  preference: github-dark-colorblind
+codex-llm:
+  longContextEnabled: true
+agent-default-model:
+  provider: openai-codex
+  model: gpt-5.6-sol
+ui-workspace-models:
+  fc079383-a2a9-4a28-bdcd-f9c52f5e56b6:
+    provider: openai-codex
+    model: gpt-5.6-sol

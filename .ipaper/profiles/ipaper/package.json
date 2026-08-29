@@ -1,0 +1,19 @@
+{
+  "name": "dsh-profile-ipaper",
+  "private": true,
+  "dependencies": {
+    "@ai4paper/apaper-plugin": "0.2.3",
+    "@ai4paper/dsh-ipaper": "^0.1.1",
+    "@isomoes/dsh-web-ui": "0.5.1",
+    "dsh-codex-auth": "^0.3.0"
+  },
+  "dsh": {
+    "profile": {
+      "bundles": [
+        "@deepseek-ai/dsh-base",
+        "@ai4paper/dsh-ipaper",
+        "dsh-codex-auth"
+      ]
+    }
+  }
+}

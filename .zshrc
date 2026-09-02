@@ -133,6 +133,8 @@ SAVEHIST=50000
 # ENVIRONMENT VARIABLES
 # ============================================================================
 
+export EDITOR=nvim
+
 # Input method configuration for IBus/fcitx with Electron apps like VSCode
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
@@ -257,6 +259,13 @@ function sysu() {
 # Source token file if it exists
 [[ -f "$HOME/.token" ]] && source "$HOME/.token"
 
+# GitHub MCP authentication from the GitHub CLI credential store
+if (( $+commands[gh] )); then
+    _github_mcp_token="$(gh auth token 2>/dev/null)"
+    [[ -n "$_github_mcp_token" ]] && export GITHUB_PERSONAL_ACCESS_TOKEN="$_github_mcp_token"
+    unset _github_mcp_token
+fi
+
 # Short alias for Claude Code
 alias cc='claude'
 
@@ -300,4 +309,3 @@ alias claude-mimo='ANTHROPIC_AUTH_TOKEN=$MIMO_API_KEY ANTHROPIC_BASE_URL="https:
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/isomoes/.opam/opam-init/init.zsh' ]] || source '/home/isomoes/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
-
